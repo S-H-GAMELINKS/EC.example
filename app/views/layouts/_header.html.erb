@@ -23,7 +23,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if user_signed_in? %>
-                <%= link_to 'Cart', user_session_path, class: 'dropdown-item' %>
+                <%= link_to 'Cart', carts_path, class: 'dropdown-item' %>
                 <%= link_to 'Sign Out', user_session_path, class: 'dropdown-item', method: :delete %>
             <% elsif admin_signed_in? %>
                 <%= link_to 'Cart', user_session_path, class: 'dropdown-item' %>
