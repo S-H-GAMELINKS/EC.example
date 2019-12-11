@@ -67,3 +67,4 @@ gem 'devise'
 # Using Bootstrap & Material Design
 gem 'bootstrap',     '4.1.1'
 gem 'material-sass', '4.1.1'
+gem 'jquery-rails'
