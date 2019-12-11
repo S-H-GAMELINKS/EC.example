@@ -31,7 +31,7 @@
           <p><%= @product.description %></p>
           <p>Price:<%= @product.price %></p>
         </div>
-        <a href="#" class="btn btn-info">Add Cart</a>
+        <%= link_to 'Add Cart', carts_path(params: {product_id: @product.id, quantity: 1}), class: 'btn btn-info', method: :post %>
       </div>
     </div>
   </div>
