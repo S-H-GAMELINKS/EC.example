@@ -69,3 +69,6 @@ gem 'bootstrap',     '4.1.1'
 gem 'material-sass', '4.1.1'
 gem 'jquery-rails'
 gem 'material_icons'
+
+# Using Kaminari
+gem 'kaminari'
