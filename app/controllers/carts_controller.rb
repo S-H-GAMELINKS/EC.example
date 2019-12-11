@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
-    before_action :set_cart_item
-    before_action :set_product
+    before_action :set_cart_item, only: [:create]
+    before_action :set_product, only: [:create]
+
+    def index
+        @products = current_user.cart.cart_items
+    end
 
     def create
         if @cart_item.blank?
