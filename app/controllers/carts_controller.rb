@@ -1,12 +1,12 @@
 class CartsController < ApplicationController
-    before_action :set_cart_item, only: [:create]
-    before_action :set_product, only: [:create]
+    before_action :set_cart_item, only: [:add, :update]
+    before_action :set_product, only: [:add]
 
     def index
         @products = current_user.cart.cart_items
     end
 
-    def create
+    def add
         if @cart_item.blank?
             puts 'Cart item'
             @cart_item = current_user.cart.cart_items.build(product_id: params[:product_id])
@@ -18,6 +18,12 @@ class CartsController < ApplicationController
         @cart_item.quantity += params[:quantity].to_i
         @cart_item.save
         redirect_to @product
+    end
+
+    def update
+        @cart_item.quantity = params[:quantity].to_i
+        @cart_item.save
+        redirect_to carts_path
     end
 
     private
