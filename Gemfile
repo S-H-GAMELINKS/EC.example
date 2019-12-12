@@ -72,3 +72,6 @@ gem 'material_icons'
 
 # Using Kaminari
 gem 'kaminari'
+
+# Using Faker
+gem 'faker'
