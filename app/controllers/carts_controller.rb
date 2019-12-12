@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    before_action :set_cart_item, only: [:add, :update]
+    before_action :set_cart_item, only: [:add, :update, :remove]
     before_action :set_product, only: [:add]
 
     def index
@@ -23,6 +23,11 @@ class CartsController < ApplicationController
     def update
         @cart_item.quantity = params[:quantity].to_i
         @cart_item.save
+        redirect_to carts_path
+    end
+
+    def remove
+        @cart_item.destroy
         redirect_to carts_path
     end
 

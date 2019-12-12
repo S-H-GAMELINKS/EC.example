@@ -10,6 +10,7 @@
               <%= form.number_field :quantity, value: product.quantity %>
               <%= form.submit %>
             <% end %>
+            <%= link_to 'Delete', carts_remove_path(params: {product_id: product.id}), method: :delete %>
       </div>
     </div>
 <% end %>

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/carts', to: 'carts#index'
   post '/carts/add', to: 'carts#add'
   post '/carts/update', to: 'carts#update'
+  delete '/carts/remove', to: 'carts#remove'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
