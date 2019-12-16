@@ -1,17 +1,25 @@
 <div class="row mt-3">
-<% @products.each do |product| %>
+  <% if @products.size == 0 %>
     <div class="card col-12 m-2">
       <div class="card-body">
-            <h5 class="card-title"><%= product.product.title %></h5>
-            <p class="card-text"><%= truncate(product.product.description) %></p>
-            <p class="card-text">Count: <%= product.quantity %></p>
-            <%= form_with url: carts_update_path do |form| %>
-              <%= form.hidden_field :product_id, value: product.id %> 
-              <%= form.number_field :quantity, value: product.quantity %>
-              <%= form.submit %>
-            <% end %>
-            <%= link_to 'Delete', carts_remove_path(params: {product_id: product.id}), method: :delete %>
+        <h1 class="text-center">カートには何もありません</h1>
       </div>
     </div>
-<% end %>
+  <% else %>
+    <% @products.each do |product| %>
+        <div class="card col-12 m-2">
+          <div class="card-body">
+                <h5 class="card-title"><%= product.product.title %></h5>
+                <p class="card-text"><%= truncate(product.product.description) %></p>
+                <p class="card-text">Count: <%= product.quantity %></p>
+                <%= form_with url: carts_update_path do |form| %>
+                  <%= form.hidden_field :product_id, value: product.id %> 
+                  <%= form.number_field :quantity, value: product.quantity %>
+                  <%= form.submit %>
+                <% end %>
+                <%= link_to 'Delete', carts_remove_path(params: {product_id: product.id}), method: :delete %>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
 </div>
