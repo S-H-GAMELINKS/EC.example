@@ -5,10 +5,10 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input class="form-control mr-sm-2" style="width: 60vw" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_with url: search_search_path, class: "form-inline my-2 my-lg-0 ml-auto", method: :get, local: true do |form| %>
+      <%= form.text_field :keyword, class: "form-control mr-sm-2", style: "width: 60vw", placeholder: "Search" %>
+      <%= form.submit "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+    <% end %>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <%= link_to 'Home', "/", class: 'nav-link' %>
