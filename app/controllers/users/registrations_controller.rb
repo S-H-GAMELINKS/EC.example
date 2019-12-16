@@ -10,9 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+     super
+     current_user.build_cart.save
+  end
 
   # GET /resource/edit
   # def edit
