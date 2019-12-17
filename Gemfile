@@ -76,5 +76,8 @@ gem 'kaminari'
 # Using Ransack
 gem 'ransack'
 
+# Using Administrate
+gem "administrate"
+
 # Using Faker
 gem 'faker'
