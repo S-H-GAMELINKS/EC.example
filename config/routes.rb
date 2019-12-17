@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'web#index'
   get '/about', to: 'web#about'
   get '/contact', to: 'web#contact'
-  devise_for :admins
+  devise_for :admin_users
   devise_for :users
   resources :products, only: [:index, :show]
   namespace :admins do

@@ -1,5 +1,5 @@
 class Admins::ProductsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   PER = 9
