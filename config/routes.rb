@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   resources :products
+  namespace :admins do
+    resources :products
+  end
   get '/carts', to: 'carts#index'
   post '/carts/add', to: 'carts#add'
   post '/carts/update', to: 'carts#update'
