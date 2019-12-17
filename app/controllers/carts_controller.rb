@@ -17,7 +17,7 @@ class CartsController < ApplicationController
         end
         @cart_item.quantity += params[:quantity].to_i
         @cart_item.save
-        redirect_to @product
+        redirect_to @product, flash: { notice: 'Add Cart!'}
     end
 
     def update
