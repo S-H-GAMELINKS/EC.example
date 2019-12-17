@@ -2,5 +2,9 @@
   <h1 class="display-4">Welcome to Rails EC!</h1>
   <p class="lead">This is a simple EC Web application.</p>
   <hr class="my-4">
-  <%= link_to 'Sign Up', user_session_path, class: 'btn btn-dark btn-lg text-white' %>
+  <% if !user_signed_in? %>
+    <%= link_to 'Sign Up', user_session_path, class: 'btn btn-dark btn-lg text-white' %>
+  <% else %>
+    <%= link_to 'Show Products', products_path, class: 'btn btn-dark btn-lg text-white' %>
+  <% end %>
 </div>
