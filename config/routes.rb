@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'web#contact'
   devise_for :admins
   devise_for :users
-  resources :products
+  resources :products, only: [:index, :show]
   namespace :admins do
     resources :products
   end
